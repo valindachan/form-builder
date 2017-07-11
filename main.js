@@ -119,7 +119,6 @@ formData.forEach(function(formData){
 
     createSelect.placeholder = formData['label'];
     createSelect.id = formData['id'];
-    createSelect.icon = formData['icon'];
     createSelect.options = formData['options'];
 
     fields.appendChild(createSelect);
@@ -129,7 +128,6 @@ formData.forEach(function(formData){
     createInput.type = formData['type'];
     createInput.placeholder = formData['label'];
     createInput.id = formData['id'];
-    createInput.icon = formData['icon'];
     createInput.options = formData['options'];
     fields.appendChild(createInput);
   }
@@ -145,9 +143,3 @@ formData.forEach(function(formData){
   // console.log(iconSpace);
 
 })
-
-
-
-// }
-
-// createLabels(formData);

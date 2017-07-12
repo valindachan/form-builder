@@ -106,15 +106,15 @@ formData.forEach(function(formData){
     createSelect.type = formData['type'];
 
     var selectLanguage = document.createElement('option')
-    selectLanguage.text = "Select language...";
+    selectLanguage.text = 'Select language...';
     selectLanguage.selected = 'selected';
     createSelect.appendChild(selectLanguage);
 
     formData.options.forEach(function(options, index){
-      var opt = document.createElement('option');
-      opt.value = formData.options[index]['value'];
-      opt.text = formData.options[index]['label'];
-      createSelect.appendChild(opt);
+      var option = document.createElement('option');
+      option.value = formData.options[index]['value'];
+      option.text = formData.options[index]['label'];
+      createSelect.appendChild(option);
     })
 
     createSelect.placeholder = formData['label'];
@@ -122,8 +122,7 @@ formData.forEach(function(formData){
     createSelect.options = formData['options'];
 
     fields.appendChild(createSelect);
-  }
-  else {
+  } else {
     createInput = document.createElement('input');
     createInput.type = formData['type'];
     createInput.placeholder = formData['label'];
@@ -133,13 +132,10 @@ formData.forEach(function(formData){
   }
 
   if (formData['type'] === 'textarea') {
-    let inputVal = document.getElementById("user-comment");
-    createInput.style.height = "125px";
+    let inputVal = document.getElementById('user-comment');
+    inputVal.style.height = '125px';
+    // Cannot get the placeholder to vertically align to the top yet
+    inputVal.style.verticalAlign = 'text-top';
   }
-
-  // Trying to make the icons show up
-  // let iconSpace = document.querySelector('input');
-  // iconSpace.innerHTML = '<i class="fa ' + createInput.icon + '" aria-hidden="true"></i>'
-  // console.log(iconSpace);
 
 })
